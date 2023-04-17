@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    android:elevation="32dp">
+    
+    <LinearLayout
+        android:id="@+id/ll_kuliner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/tv_idKuliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ID Kuliner"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/tv_namaKuliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Kuliner"
+            android:textSize="21sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_asalKuliner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Asal Kuliner"
+            android:textSize="21sp"/>
+        <TextView
+            android:id="@+id/tv_deskripsiSingkat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Deskripsi Singkat"
+            android:textSize="21sp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
