@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void retriveKuliner() {
         APIRequestData ARD = RetroServer.konekRetrofit().create(APIRequestData.class);
-        Call<ModelResponse> proses = ARD.ardRetrive();
+        Call<ModelResponse> proses = ARD.ardRetrieve();
 
         proses.enqueue(new Callback<ModelResponse>() {
             @Override

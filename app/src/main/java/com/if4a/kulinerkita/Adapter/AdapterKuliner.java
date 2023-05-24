@@ -2,6 +2,7 @@ package com.if4a.kulinerkita.Adapter;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.if4a.kulinerkita.API.APIRequestData;
 import com.if4a.kulinerkita.API.RetroServer;
 import com.if4a.kulinerkita.Activity.MainActivity;
+import com.if4a.kulinerkita.Activity.UbahActivity;
 import com.if4a.kulinerkita.Model.ModelKuliner;
 import com.if4a.kulinerkita.Model.ModelResponse;
 import com.if4a.kulinerkita.R;
@@ -85,7 +87,13 @@ public class AdapterKuliner extends RecyclerView.Adapter<AdapterKuliner.VHKuline
                     pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
+                            Intent intent = new Intent(ctx, UbahActivity.class);
+                            intent.putExtra("xId", tvId.getText().toString());
+                            intent.putExtra("xNama", tvNama.getText().toString());
+                            intent.putExtra("xAsal", tvAsal.getText().toString());
+                            intent.putExtra("xDeskripsiSingkat", tvDeskripsiSingkat.getText().toString());
+                            ctx.startActivity(intent);
+                            dialog.dismiss();
                         }
                     });
 
@@ -105,7 +113,7 @@ public class AdapterKuliner extends RecyclerView.Adapter<AdapterKuliner.VHKuline
                     String kode = response.body().getKode();
                     String pesan = response.body().getPesan();
 
-                    Toast.makeText(ctx, "Kode : " + kode + "Pesan : " + pesan, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ctx, "Kode : " + kode + "\nPesan : " + pesan, Toast.LENGTH_SHORT).show();
                     ((MainActivity) ctx).retriveKuliner();
                 }
 
